@@ -1,1 +1,5 @@
-
+systemctl enable jenkins
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-service=http --permanent
+firewall-cmd --reload
+echo "The admin password is: " && cat /var/lib/jenkins/secrets/initialAdminPassword
